@@ -1,0 +1,96 @@
+﻿<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>代码雨背景用户注册表单代码 </title>
+
+    <link type="text/css" href="css/style.css" rel="stylesheet" />
+
+</head>
+
+<!-- 登录 -->
+<div class="register">
+    <form id="ajaxForm" class="login-wrap">
+        <img class="avatar" src="img/4.jpg">
+        <ul>
+            <li>
+                <label for="">用 户 名 :</label>
+                <input type="text" name="userName" class="name">
+            </li>
+            <li>
+                <label for="">设置密码 :</label>
+                <input type="password" name="password" class="pass">
+            </li>
+            <li>
+                <label for="">确认密码 :</label>
+                <input type="password" name="" class="repass">
+            </li>
+            <li>
+                <label for="">验证手机 :</label>
+                <input type="text" name="phone" class="mobile">
+            </li>
+            <li>
+                <label for="">短信验证 :</label>
+                <input type="text" name="" class="code">
+                <input type="button" value="获取验证码" class="verify">
+            </li>
+            <li>
+                <label for=""></label>
+                <input type="button" class="submit " value="立即注册">
+            </li>
+        </ul>
+    </form>
+</div>
+
+<!--代码雨区域-->
+<canvas id="canvas" style="background:#000"></canvas>
+<script>
+    // 代码雨
+    window.onload = function () {
+        var canvas = document.getElementById("canvas");
+        var context = canvas.getContext("2d");
+        // 浏览器宽高
+        var W = window.screen.availWidth;
+        var H = window.screen.availHeight;
+        canvas.width = W;
+        canvas.height = H;
+        var fontSize = 18;
+        var colunms = Math.floor(W / fontSize);
+        // 坐标
+        var coordinate = [];
+        for (var i = 0; i < colunms; i++) {
+            coordinate.push(0);
+        }
+        var str = "javascript html5 canvas";
+        function draw() {
+            // 背景色
+            context.fillStyle = "rgba(0,0,0,0.05)";
+            context.fillRect(0, 0, W, H);
+            context.font = "800 " + fontSize + "px  宋体";
+            // 字体颜色
+            context.fillStyle = "#01fef5";
+            for (var i = 0; i < colunms; i++) {
+                var index = Math.floor(Math.random() * str.length);
+                var x = i * fontSize;
+                var y = coordinate[i] * fontSize;
+                context.fillText(str[index], x, y);
+                if (y >= canvas.height && Math.random() > 0.88) {
+                    coordinate[i] = 0;
+                }
+                coordinate[i]++;
+            }
+        }
+
+        function randColor() {
+            var r = Math.floor(Math.random() * 256);
+            var g = Math.floor(Math.random() * 256);
+            var b = Math.floor(Math.random() * 256);
+            return "rgb(" + r + "," + g + "," + b + ")";
+        }
+
+        draw();
+        setInterval(draw, 30);
+    };
+</script>
+</body>
+</html>

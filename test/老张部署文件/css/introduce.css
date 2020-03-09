@@ -1,0 +1,144 @@
+ /* #mynav{
+    position: absolute;
+    left: 60%;
+    z-index: 2;
+}
+ 
+ #myCarousel{
+    position: absolute;
+    z-index: 1;
+ }
+ #myCarousel  .carousel-inner > .item > img {
+    display: block;
+    width:50%;
+    height:40%;
+    text-align: center;
+    z-index: 1;
+} */
+.top {
+   background-color: #404A54;
+   height: 60px;
+}
+
+.top * {
+   color: #FFF;
+}
+
+.top li {
+   font-size: 18px;
+   margin-top: 7px;
+   margin-left: 10px;
+}
+
+.navbar-brand {
+   font-size: 22px;
+   margin-top: 7px;
+}
+
+.footer {
+   background-color: #404A54;
+   height: 400px;
+}
+/* .jumbotron {
+   padding: 10px 30px 10px 30px;
+}
+
+.jumbotron p {
+   font-size: 14px;
+   line-height: 2.0;
+}
+
+.jumbotron h4 {
+   font-size: 16px;
+   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+   line-height: 1.8;
+} */
+
+.beleft {
+   float: left;
+   margin-left: 100px;
+}
+
+.carousel {
+   height: 500px;
+   margin-bottom: 30px;
+}
+
+.carousel .item {
+   height: 500px;
+}
+
+.carousel img {
+   min-height: 500px;
+   width: 100%;
+}
+.col-md-6{
+   width:100%;  height: 480px; background: #fbfbfb; position: relative; z-index: 1;
+}
+ 
+
+/* .wrap_content {
+    position: relative;
+    z-index: 1;
+} */
+
+.wrap_footer{width:100%;  height: 480px; background: #fbfbfb; position: relative; z-index: 1;}
+.footer_con{ width:1200px; margin: 0px auto; height: 480px; position: relative;}
+.footer_con .tit{ display:block; font-size: 20px; color: #5f6464; font-weight: normal; margin-bottom: 30px; }
+.footer_con ul li a{ display:block; font-size: 16px; color: #5f6464; font-weight: normal; margin-bottom: 18px;}
+.focus_us{ display: block; height: 55px; width: 100%; border-bottom: 1px solid #f2f3f5; padding-top: 33px; margin-bottom: 40px;}
+.focus_us .tit{ float: left; margin-right: 33px; }
+.focus_us .focus_list li{ display:inline-block; float: left;margin-top: 18px; margin-right: 28px;}
+.focus_us .focus_list li a{ display:block; height: 28px; width: 28px;}
+.focus_us .focus_list li a .icon{ display:block; height: 28px; width: 28px; background:url(../img/wechatlogo.gif) no-repeat center; background-size: 100% 100%;position: relative; transition: background 0.2s ease-in-out;}
+.focus_us .focus_list li a .i_phone{background:url(../img/phonelogo.gif) no-repeat center; background-size: 100% 100%;}
+/* .focus_us .focus_list li a .i_twitter{background:url(../img/index/icon_twitter.png) no-repeat center; background-size: 100% 100%;}
+.focus_us .focus_list li a .i_in{background:url(../img/index/icon_in.png) no-repeat center; background-size: 100% 100%;} */
+
+.focus_us .focus_list li a:hover .icon{
+  background:url(../img/wechatlogo.gif) no-repeat center; background-size: 100% 100%;
+}
+.focus_us .focus_list li a:hover .i_phone{
+  background:url(../img/phonelogo.gif) no-repeat center; background-size: 100% 100%;
+}
+/* .focus_us .focus_list li a:hover .i_twitter{
+  background:url(../img/index/icon_twitter_hover.png) no-repeat center; background-size: 100% 100%;
+}
+.focus_us .focus_list li a:hover .i_in{
+  background:url(../img/index/icon_in_hover.png) no-repeat center; background-size: 100% 100%;
+} */
+
+.wechat-code {
+  width: 176px;
+  position: absolute;
+  left: 0;
+  /* top: -186px; */
+  /* z-index: 2; */
+  display: block;
+  /* display:none\9; */
+  opacity: 0;
+  transition: opacity 0.2s linear;
+  pointer-events:none;
+ margin-left: 20%;
+}
+.phone-code{
+   width: 66px;
+   position: absolute;
+   /* left: 0; */
+   /* top: -186px; */
+   /* z-index: 2; */
+   display: block;
+   /* display:none\9; */
+   opacity: 0;
+   transition: opacity 0.2s linear;
+   pointer-events:none;
+  /* margin-left: 30%; */
+}
+.focus_us .focus_list li a:hover .wechat-code{
+  display: block;
+  opacity: 1;
+}   
+.focus_us .focus_list li a:hover .phone-code{
+   display: block;
+   opacity: 1;
+ } 
