@@ -1,0 +1,99 @@
+{% extends "../templates/shouye/layout.html" %}
+{% block content %}
+<!-- enctype="multipart/form-data" method="POST" -->
+<form id="form-file-data" action="/data/upload/" method="POST" enctype="multipart/form-data">
+    <div class="form-group">
+        <span class="label label-info">数据名称</span>
+        <input type="text" name="name" class="form-control" placeholder="Text input">
+        <span class="label label-info">数据文件</span>
+        <div class="file-loading">
+            <!-- {% raw xsrf_form_html() %} -->
+            {% raw xsrf_form_html() %}
+            <input id="text_file" name="file" type="file" class="file" data-upload-url="/data/upload/" data-theme="fas">
+            <!-- <input type="file" class="file" name="tkai_file" multiple> -->
+        </div>
+        <span class="label label-info">相关markdown说明</span>
+        <textarea id="editor-id" name="markdown" rows="15">
+                    </textarea>
+
+        <div class="row">
+            <div class="col-sm-4">
+            </div>
+            <div class="col-sm-2">
+                <button id="btn-data" type="button" class="btn btn-block btn-primary"><i class="fa fa-check"></i>
+                    Submit</button>
+            </div>
+            <div class="col-sm-2">
+                <button type="reset" class="btn btn-block btn-default"><i class="fa fa-ban"></i> Reset</button>
+            </div>
+            <div class="col-sm-4">
+            </div>
+        </div>
+    </div>
+    <hr>
+    <div class="form-group">
+        <!-- <input class="btn btn-primary" type="submit" value="Submit"></input> -->
+        <!-- <button class="btn btn-outline-secondary" type="reset">Reset</button> -->
+    </div>
+</form>
+<script>
+    $(document).ready(function () {
+        //加载markdown拆件
+        $("#editor-id").markdownEditor();
+        // with plugin options
+        $("#editor-id").markdownEditor({ useTwemoji: true });
+        //markdown完
+
+        //加载file插件的组件
+        file_upload(
+            '/data/upload/',
+            ['name', 'file', 'markdown'],
+            '/' //成功之后的跳转链接
+        )
+    })
+    // $(document).ready(function () {
+    //     //0.初始化fileinput
+    //     var oFileInput = new FileInput();
+    //     oFileInput.Init("txt_file", ['_xsrf'], "/data/upload/");
+    // })
+    // $(document).ready(function () {
+    //     if (sessionStorage.image_ai_sequence == null || sessionStorage.image_ai_sequence == undefined) {
+    //         sessionStorage.image_ai_sequence = Date.parse(new Date());
+    //     }
+    //     var fileInput = $("#tkai_input").fileinput({
+    //         uploadUrl: "/upload",
+    //         uploadAsync: true,
+    //         maxFileCount: 15,
+    //         allowedFileExtensions: ['jpg', 'jpeg', 'png', 'gif'],//允许的文件类型
+    //         showUpload: false,                                 //是否显示上传按钮
+    //         showCaption: true,                                 //是否显示标题
+    //         showPreview: true,
+    //         autoReplace: true,
+    //         dropZoneEnabled: true,
+    //         uploadExtraData: function () { return { 'sequence': sessionStorage.image_ai_sequence, '_xsrf': document.getElementsByName('_xsrf')[1].value } }
+    //     }).on('filepreajax', function (event, previewId, index) {
+    //         console.log('previewId:' + previewId + ', index: ' + index + ', seq: ' + sessionStorage.image_ai_sequence);
+    //     }).on('filepreupload', function (event, data, previewId, index, jqXHR) {
+    //         //console.log('filepreupload');
+    //     }).on('fileuploaded', function (event, data) {     //单个文件上传成功后的回调
+    //         //console.log('fileuploaded');
+    //         var res = data.response;
+    //         if (res.result == "NOK") {
+    //             ;                                        //如果后台处理的结果显示为NOK，说明识别效果没有达到预期，要重新传图片
+    //         } else if (res.result == "OK") {
+    //             sessionStorage.image_ai_sequence = Date.parse(new Date());       //识别效果达到预期，可以不用再传文件了。
+    //             bootbox.alert("Result is acceptable!");
+    //         }
+    //     }).on('filecustomerror', function (event, params, msg) {
+    //         //console.log(params)
+    //         //console.log(msg)
+    //     }).on('fileclear', function (event, data) {         //删除按钮对应的回调
+    //         //console.log(data);
+    //     }).on('filebatchuploadsuccess', function (event, data) { //批量上传文件对应的回调
+    //         //console.log(data);
+    //     });
+    // });
+
+</script>
+
+{% end %}

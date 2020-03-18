@@ -1,17 +1,114 @@
 {% extends "../templates/shouye/layout.html" %}
-
+{% block search %}
+<!----搜索栏目-->
+<div class="col-md-4">
+    <div class="input-group">
+        <input type="text" class="form-control" placeholder="Search for...">
+        <span class="input-group-btn">
+            <button class="btn btn-default" type="button">Go!</button>
+        </span>
+    </div><!-- /input-group -->
+</div><!-- /.col-lg-6 -->
+{% end %}
 {% block content %}
+<div class="row">
+    <div class="col-sm-3">
+        <div class="card" style="width: 24rem; height: 24rem;display:inline;">
+            <img class="card-img-top" src="{{ static_url('image/data_default.jpeg') }}" alt="Card image cap"
+                style="width: 24rem;">
+            <div class="card-body">
+                <h5 class="card-title">Card title</h5>
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+                    card's
+                    content.<a href="#" class="card-link">详细信息</a></p>
 
-                <div class="col-md-4 column nerous">
-                    <h2>
-                        <a href="#">数据 </a>
-                    </h2>
-                    <p>
-                        这些都应该是很好的数据
-                    </p>
-                    <p>
-                        <a class="btn" href="#">View details »</a>
-                    </p>
-                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-3">
+        <div class="card" style="width: 24rem;height: 24rem; display:inline;">
+            <img class="card-img-top" src="{{ static_url('image/1.jpeg') }}" alt="Card image cap" style="width: 24rem;">
+            <div class="card-body">
+                <h5 class="card-title">Card title</h5>
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+                    card's
+                    content.</p>
+                <a href="#" class="card-link">详细信息</a>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-3">
+        <div class="card" style="width: 24rem;height: 24rem; display:inline;">
+            <img class="card-img-top" src="{{ static_url('image/2.jpeg') }}" alt="Card image cap" style="width: 24rem;">
+            <div class="card-body">
+                <h5 class="card-title">Card title</h5>
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+                    card's
+                    content.</p>
+                <a href="#" class="card-link">详细信息</a>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-3">
+        <div class="card" style="width: 24rem;height: 24rem; display:inline;">
+            <img class="card-img-top" src="{{ static_url('image/3.jpeg') }}" alt="Card image cap" style="width: 24rem;">
+            <div class="card-body">
+                <h5 class="card-title">Card title</h5>
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+                    card's
+                    content.</p>
+                <a href="#" class="card-link">详细信息</a>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-3">
+        <div class="card" style="width: 24rem; height: 24rem;display:inline;">
+            <img class="card-img-top" src="{{ static_url('image/4.jpeg') }}" alt="Card image cap" style="width: 24rem;">
+            <div class="card-body">
+                <h5 class="card-title">Card title</h5>
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+                    card's
+                    content.</p>
+                <a href="#" class="card-link">详细信息</a>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-3">
+        <div class="card" style="width: 24rem;height: 24rem; display:inline;">
+            <img class="card-img-top" src="{{ static_url('image/5.jpeg') }}" alt="Card image cap" style="width: 24rem;">
+            <div class="card-body">
+                <h5 class="card-title">Card title</h5>
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+                    card's
+                    content.</p>
+                <a href="#" class="card-link">详细信息</a>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-3">
+        <div class="card" style="width: 24rem; height: 24rem;display:inline;">
+            <img class="card-img-top" src="{{ static_url('image/6.jpeg') }}" alt="Card image cap" style="width: 24rem;">
+            <div class="card-body">
+                <h5 class="card-title">Card title</h5>
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+                    card's
+                    content.</p>
+                <a href="#" class="card-link">详细信息</a>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-3">
+        <div class="card" style="width: 24rem;height: 24rem; display:inline;">
+            <img class="card-img-top" src="{{ static_url('image/7.jpeg') }}" alt="Card image cap" style="width: 24rem;">
+            <div class="card-body">
+                <h5 class="card-title">Card title</h5>
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+                    card's
+                    content.</p>
+                <a href="#" class="card-link">详细信息</a>
+            </div>
+        </div>
+    </div>
+</div>
 
 {% end %}

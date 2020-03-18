@@ -1,17 +1,27 @@
 {% extends "../templates/shouye/layout.html" %}
-
+{% block search %}
+<!----搜索栏目-->
+<div class="col-md-4">
+    <div class="input-group">
+        <input type="text" class="form-control" placeholder="Search for...">
+        <span class="input-group-btn">
+            <button class="btn btn-default" type="button">Go!</button>
+        </span>
+    </div><!-- /input-group -->
+</div><!-- /.col-lg-6 -->
+{% end %}
 {% block content %}
 
-                <div class="col-md-4 column nerous">
-                    <h2>
-                        <a href="#">模型 </a>
-                    </h2>
-                    <p>
-                        这些都应该是很好的模型
-                    </p>
-                    <p>
-                        <a class="btn" href="#">View details »</a>
-                    </p>
-                </div>
+<div class="col-md-4 column nerous">
+    <h2>
+        <a href="#">模型 </a>
+    </h2>
+    <p>
+        这些都应该是很好的模型
+    </p>
+    <p>
+        <a class="btn" href="#">View details »</a>
+    </p>
+</div>
 
 {% end %}

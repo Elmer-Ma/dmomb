@@ -3,11 +3,13 @@ from app.api.view_common import CommonHandler
 from tornado.escape import utf8
 from tornado.util import unicode_type
 
+
 class HtmlHandler(CommonHandler):
     '''
     渲染模板的
     '''
-    def html(self,template_name, **kwargs):
+
+    def html(self, template_name, **kwargs):
 
         if self._finished:
             raise RuntimeError("Cannot render() after finish()")
