@@ -75,12 +75,11 @@ class CommonHandler(tornado.web.RequestHandler):
     # 表单数据
     @property
     def form_params(self):
-        # print(self.ajax_params)
+        print("self.ajax_params",self.ajax_params)
         return MultiDict(self.ajax_params)
 
 
 if __name__ == "__main__":
     print(
         CommonHandler.common_params
-
     )

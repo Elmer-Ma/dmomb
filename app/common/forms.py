@@ -88,8 +88,11 @@ class LoginForm(Form):
         mail = self.mail.data
         c = Check()
         match_user = c.check_pwd(mail, data)
-        if match_user:
+        print("match_user zzz",match_user)
+        if match_user == None or match_user==False:
             raise ValidationError("账号密码不正确!")
+
+
 
 
 class DataForm(Form):

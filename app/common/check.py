@@ -37,9 +37,12 @@ class Check:
 
     # 检测密码是否正确
 
-    def check_pwd(self, name, pwd):
+    def check_pwd(self, mail, pwd):
         db = self.md.dmomb
         co = db.account
-        match_user = co.find_one({'name': name})
+        print("mail",mail)
+        match_user = co.find_one({'mail': mail})
+        print("match_user",match_user)
         if match_user:
-            return check_password_hash(match_user['password'], pwd)
+            print("check_password_hash(match_user['password'], pwd)",check_password_hash(match_user['password'], pwd))
+            return (check_password_hash(match_user['password'], pwd))

@@ -79,7 +79,8 @@ function request(url, fields, redirect_url) {
   })
 }
 
-function login(url, fields, redirect_url) {
+function  login(url, fields, redirect_url) {
+  alert(typeof (fields)+fields);
   $("#btn-sub").click(function () {
     console.log("into btn-sub")
     //对表单进行序列化
@@ -91,26 +92,24 @@ function login(url, fields, redirect_url) {
       dataType: "json",
       success: function (res) {
         console.log(res)
-        if (res.code == 1) {
+        if(res.code == 1) {
+          alert("登录成功");
           //修改显示的模块
-          $("#info_login").html("欢迎你" + res.user.mail);
+          // $("#info_login").html("欢迎你" + res.user.mail);
+          $("#user_info").html(res.user.mail);
           $("#no_login").css("display", "none");
           $("#haved_login").css("display", "block");
+          // $("#id01").css("display","block");
           //成功跳转
           // location.href = redirect_url;
         } else {
           //失败信息的展示
           var error = res.data;
+          // alert("error"+error)
           for (var index in fields) {
             var key = fields[index];
-            if (typeof error[key] === 'undefined') {
-              $("error_" + key).empty();
-
-            } else {
-              $("#error_" + key).empty();
-              $("#error_" + key).apppend(
-                error[key]
-              )
+            if(error[key]!=undefined){
+               alert("错误提示"+error[key]);
             }
           }
         }
