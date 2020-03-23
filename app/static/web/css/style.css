@@ -12,6 +12,12 @@ html {
   height: 100%;
   background-color: #ffffff;
 }
+.div_img_login{
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  overflow: hidden;
+}
 .nav .open > a {
   background-color: transparent;
 }

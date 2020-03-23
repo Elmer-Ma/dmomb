@@ -87,7 +87,9 @@ font-family:Verdana;
 }
 /*--//icons--*/
 
+
 .sub-main input[type="text"],.sub-main input[type="password"]  {
+	/*position: fixed;*/
     outline: none;
     font-size: 1.1em;
     margin: 4px 0px 18px 1px;
@@ -261,6 +263,13 @@ font-family:Verdana;
 	.sub-head {
 		font-size: 30px;
 	}
+}
+.error_tip{
+	float: right;
+	position: relative;
+	width: auto;
+	color: #e26864;
+
 }
 @media (max-width: 375px){
 	.icon1, .icon2, .icon3, .icon4, .icon5, .icon6 {

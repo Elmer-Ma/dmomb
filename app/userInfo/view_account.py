@@ -30,7 +30,7 @@ class AccountAddHandler(HtmlHandler):
         res = dict(code=0, msg='失败')
         print("进去view_account")
         form = AccountAddForm(self.form_params)
-        print(self.form_params)
+        print("self.form_params",self.form_params)
         if form.validate():
             # 验证通过
             # 保存数据
@@ -77,7 +77,7 @@ class LoginHandler(HtmlHandler):
         res = dict(code=0, msg='失败')
         print("进去LoginHandler")
         form = LoginForm(self.form_params)
-        # print(form)
+        print("form",form)
         # field = form.mail
         if form.validate():
             # 定义成功接口格式
@@ -87,5 +87,5 @@ class LoginHandler(HtmlHandler):
         else:
             # 定义失败接口格式
             res['data'] = form.errors
-        print(res)
+        print("res",res)
         self.write(res)
