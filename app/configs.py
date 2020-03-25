@@ -13,8 +13,8 @@ configs = dict(
 
 # 数据库注册信息
 mongodb_configs = dict(
-    # db_host='106.14.200.68',
-    db_host='127.0.0.1',
+    db_host='106.14.200.68',
+    #db_host='127.0.0.1',
     db_port=27017
 )
 # print(configs['templates_path'])
