@@ -57,7 +57,7 @@
     <!-- Twitter Emojis Plugin (if you need twitter emojis) -->
     <!-- <script src="http://twemoji.maxcdn.com/2/twemoji.min.js?11.0"></script> -->
     <!-- Include DOM purify plugin if you need to purify HTML output (needed only if markdown-it HTML input 
-   is allowed). This must be loaded before markdown-editor.js. -->
+       is allowed). This must be loaded before markdown-editor.js. -->
     <script src="{{ static_url('web/markdown/plugins/purify/purify.min.js') }}" type="text/javascript">
     </script>
     <!-- Markdown IT Main Library -->
@@ -100,15 +100,14 @@
     <script src="{{ static_url('web/markdown/plugins/highlight/highlight.min.js') }}" type="text/javascript"></script>
     <!-- Bootstrap 4.x Complete Bundle Library (including Popper) -->
     <!-- <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.bundle.min.js"
-        type="text/javascript"></script> -->
+            type="text/javascript"></script> -->
     <!-- Krajee Markdown Editor Main Library -->
     <script src="{{ static_url('web/markdown/js/markdown-editor.js') }}" type="text/javascript"></script>
     <!-- Optionally include theme.js script or theme.css for a different theme if needed -->
     <!-- script src="/path/to/themes/fa5/theme.js" type="text/javascript"></script -->
     <!-- Optionally include localization script for your language if needed -->
     <!-- script src="/path/to/js/locales/en.js" type="text/javascript"></script>
-    <!-- markdown完 -->
-
+        <!-- markdown完 -->
 </head>
 
 <body>
@@ -166,157 +165,158 @@
         <!-- /#sidebar-wrapper -->
 
         <!-- Page Content -->
-        <div id="page-content-wrapper">
-            <div class="fadeInLeft">
+        <div id="page-content-wrapper1">
+            <div class="fadeInLeft" style="float: left; width: 50px;">
                 <button type="button" class="hamburger is-closed animated " data-toggle="offcanvas">
                     <span class="hamb-top"></span>
                     <span class="hamb-middle"></span>
                     <span class="hamb-bottom"></span>
                 </button>
                 <div>
-
+                    fucker
                 </div>
             </div>
-
-
-            <div class="container">
-                <div class='row'>
+            <div class="container" style="float: left; margin-left: 50px;">
+                <div class='row' style="background-color:gainsboro">
                     <!----div标题栏-->
-                    <div class="col-md-3">
+                    <div class="col-md-4">
                         <h3>dmomb网站首页</h3>
                     </div>
-                    {% block search %}{% end %}
-                    <!---登录注册-->
-                    <!-- <div class="col-md-2 col-md-offset-2"> 
-                    <button type="button" class="btn btn-success" onclick="loginf()">
-                        <span class="glyphicon glyphicon-heart-empty" aria-hidden="true"　>login</span>
-        
-                    </button>
-                    <button type="button" class="btn btn-success" onclick="registf()">
-                        <span class="glyphicon glyphicon-plane" aria-hidden="true"　>regist</span>
-        
-                    </button>
-                </div> -->
-                    <div id="no_login" class="col-md-4">
-                        <ul class="nav navbar-nav navbar-right">
-                            <li>
-                                <p class="navbar-text">登录注册点击这里</p>
-                            </li>
-                            <li class="dropdown">
-                                <button class="img_button" href="#" class="dropdown-toggle" data-toggle="dropdown"><b>登录 / 注册</b> <span
-                                        class="caret"></span></button>
-                                <ul id="login-dp" class="dropdown-menu">
-                                    <li>
-                                        <div class="row">
-                                            <div class="col-md-12">
-                                                快捷登录
-                                                <div class="social-buttons">
-                                                    <a href="#" class="btn btn-fb"><i class="fa fa-wechat"></i>
-                                                        微信</a>
-                                                    <a href="#" class="btn btn-tw"><i class="fa fa-qq"></i> QQ</a>
-                                                </div>
-                                                or
-                                                <form class="form" method="post" role="form" accept-charset="UTF-8"
-                                                    id="form-data">
-                                                    {% raw xsrf_form_html() %}
-                                                    <div class="form-group">
-
-                                                        <label class="sr-only" for="exampleInputEmail2">Email
-                                                            address</label>
-                                                        <input name="mail" type="email" class="form-control"
-                                                            id="exampleInputEmail2" placeholder="Email address"
-                                                            required>
-                                                    </div>
-                                                    <div class="form-group">
-                                                        <label class="sr-only"
-                                                            for="exampleInputPassword2">Password</label>
-                                                        <input name="password" type="password" class="form-control"
-                                                            id="exampleInputPassword2" placeholder="Password" required>
-                                                        <div class="help-block text-right"><a href="">忘记密码
-                                                                ?</a></div>
-                                                    </div>
-                                                    <div class="form-group">
-                                                        <input id="btn-sub" type="button"
-                                                            class="btn btn-primary btn-block" value="登录"></input>
-                                                    </div>
-                                                    <div class="checkbox">
-                                                        <label>
-                                                            <input type="checkbox"> 保持登录状态
-                                                        </label>
-                                                    </div>
-                                                </form>
-                                            </div>
-                                            <div class="bottom text-center">
-                                                没有账号? <a href="/user/add/"><b>注册</b></a>
-                                            </div>
-                                        </div>
-                                    </li>
-                                </ul>
-                            </li>
-                        </ul>
+                    <!-- 搜索框的大小 -->
+                    <div class="col-md-4">
+                        {% block search %}{% end %}
                     </div>
-                    <!-- 登录之后显示的模块 -->
-                    <div id="haved_login" class="col-md-4 col-md-offset-1" style="width:200px;height:200px;display:none">
-                        <label id="info_login"> </label>
-                        <div>
-                        <div class="div_img_login">
-                            <img id="img_login" src="../../static/image/1.jpeg" class="round_icon"  alt="">
+                    <div class="col-md-2">
+
+                    </div>
+                    <div class="col-md-2">
+                        <div id="no_login">
+                            <ul class="nav navbar-nav navbar-right">
+                                <!-- <li>
+                                    <p class="navbar-text">登录注册点击这里</p>
+                                </li> -->
+                                <li class="dropdown">
+                                    <button class="img_button" href="#" class="dropdown-toggle"
+                                        data-toggle="dropdown"><b>登录 / 注册</b> <span class="caret"></span></button>
+                                    <ul id="login-dp" class="dropdown-menu">
+                                        <li>
+                                            <div class="row">
+                                                <div class="col-md-12">
+                                                    快捷登录
+                                                    <div class="social-buttons">
+                                                        <a href="#" class="btn btn-fb"><i class="fa fa-wechat"></i>
+                                                            微信</a>
+                                                        <a href="#" class="btn btn-tw"><i class="fa fa-qq"></i> QQ</a>
+                                                    </div>
+                                                    or
+                                                    <form class="form" method="post" role="form" accept-charset="UTF-8"
+                                                        id="form-data">
+                                                        {% raw xsrf_form_html() %}
+                                                        <div class="form-group">
+
+                                                            <label class="sr-only" for="exampleInputEmail2">Email
+                                                                address</label>
+                                                            <input name="mail" type="email" class="form-control"
+                                                                id="exampleInputEmail2" placeholder="Email address"
+                                                                required>
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label class="sr-only"
+                                                                for="exampleInputPassword2">Password</label>
+                                                            <input name="password" type="password" class="form-control"
+                                                                id="exampleInputPassword2" placeholder="Password"
+                                                                required>
+                                                            <div class="help-block text-right"><a href="">忘记密码
+                                                                    ?</a></div>
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <input id="btn-sub" type="button"
+                                                                class="btn btn-primary btn-block" value="登录"></input>
+                                                        </div>
+                                                        <div class="checkbox">
+                                                            <label>
+                                                                <input type="checkbox"> 保持登录状态
+                                                            </label>
+                                                        </div>
+                                                    </form>
+                                                </div>
+                                                <div class="bottom text-center">
+                                                    没有账号? <a href="/user/add/"><b>注册</b></a>
+                                                </div>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
                         </div>
-                        <div id="id01" class="img_modal">
-                                <div class="img_modal-content animate">
-                                     <div class="modal-header">
-                                <!--<form class="img_modal-content animate" action="/action_page.php">-->
-                                    <div class="img_container">
-                                        <!-- 点击×号，隐藏模态框-->
-                                        <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
-                                        <img src="../../static/image/1.jpeg" alt="Avatar" class="avatar img_label_oneline">
-                                        <label id="user_info" class="img_label_oneline"></label>
-                                    </div>
-                                    <div class="img_container">
-                                        <div>
-                                            <a style="float: left">
-                                             <label>关注</label>
-                                            </a>
-                                            <a>
-                                                 <label>动态</label>
-                                            </a>
-                                            <a style="float: right">
-                                                 <label>粉丝</label>
-                                            </a>
+                        <!-- 登录之后显示的模块 -->
+                        <div id="haved_login" style="width:200px;display:none">
+                            <label id="info_login"> </label>
+                            <div>
+                                <div class="div_img_login">
+                                    <img id="img_login" src="../../static/image/1.jpeg" class="round_icon" alt="">
+                                </div>
+                                <div id="id01" class="img_modal">
+                                    <div class="img_modal-content animate">
+                                        <div class="modal-header">
+                                            <!--<form class="img_modal-content animate" action="/action_page.php">-->
+                                            <div class="img_container">
+                                                <!-- 点击×号，隐藏模态框-->
+                                                <span onclick="document.getElementById('id01').style.display='none'"
+                                                    class="close" title="Close Modal">&times;</span>
+                                                <img src="../../static/image/1.jpeg" alt="Avatar"
+                                                    class="avatar img_label_oneline">
+                                                <label id="user_info" class="img_label_oneline"></label>
+                                            </div>
+                                            <div class="img_container">
+                                                <div>
+                                                    <a style="float: left">
+                                                        <label>关注</label>
+                                                    </a>
+                                                    <a>
+                                                        <label>动态</label>
+                                                    </a>
+                                                    <a style="float: right">
+                                                        <label>粉丝</label>
+                                                    </a>
+                                                </div>
+                                            </div>
                                         </div>
-                                    </div>
-                                     </div>
-                                    <div class="modal-body">
-                                        <div>
-                                              <label style="text-align:left "><b>个人中心</b></label>
+                                        <div class="modal-body">
+                                            <div>
+                                                <label style="text-align:left "><b>个人中心</b></label>
+                                            </div>
+                                            <div>
+                                                <label style="text-align:left ">您的工作室 </label>
+                                            </div>
+                                            <div>
+                                                <label style="text-align:left; hover:#83fff3"
+                                                    onclick="change_user()">切换账号</label>
+                                            </div>
+                                            <div>
+                                                <label style="text-align:left ">切换语言</label>
+                                            </div>
                                         </div>
-                                        <div>
-                                            <label style="text-align:left ">您的工作室 </label>
+                                        <div class="modal-footer">
+                                            <div style="text-align: center">
+                                                <!-- 点击cancel按钮，把模态框隐藏-->
+                                                <a onclick="document.getElementById('id01').style.display='none'"
+                                                    class="cancelbtn">取消</a>
+                                                <a href="#" style="text-decoration: none;">设置</a><a href="#"
+                                                    style="float: right;text-decoration: none; ">夜间模式</a>
+                                            </div>
+                                            <!--</form>-->
                                         </div>
-                                        <div>
-                                            <label style="text-align:left; hover:#83fff3" onclick="change_user()">切换账号</label>
-                                        </div>
-                                        <div>
-                                            <label style="text-align:left ">切换语言</label>
-                                        </div>
-                                    </div>
-                                    <div class="modal-footer">
-                                    <div style="text-align: center">
-                                        <!-- 点击cancel按钮，把模态框隐藏-->
-                                        <a onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">取消</a>
-                                        <a href="#" style="text-decoration: none;">设置</a><a href="#" style="float: right;text-decoration: none; ">夜间模式</a>
-                                    </div>
-                                <!--</form>-->
                                     </div>
                                 </div>
-                        </div>
 
+                            </div>
                         </div>
                     </div>
-
+                </div>
                 <!----中间内容部分-->
-                <main class="row clearfix" style="height: 800px;">
-                    {% block jumbotron %}{% end %}
+                {% block jumbotron %}{% end %}
+                <main class="row clearfix">
                     {% block content %}{% end %}
                 </main>
 
@@ -328,39 +328,41 @@
                     </div>
                 </div>
                 </main>
+
+                <!-- /#page-content-wrapper -->
+
             </div>
-            <!-- /#page-content-wrapper -->
-
+            <!-- /#wrapper -->
         </div>
-        <!-- /#wrapper -->
-        <script>
-            $(document).ready(function () {
-                console.log("进入reques");
-                $('#img_login').click(function () {
-                    $("#id01").css("display", "block");
-                    // $('#img_login').css("display","none");
-                })
-                login(
-                    '/user/login/',
-                    ['mail', 'password'],
-                    '/')
-                $(".modal-body label").click(
-                    function () {
-                      if ($(this).hasClass('focus')) {
-                            return true;
-                        } else {
-                            $('.modal-body label').removeClass('focus');
-                            $(this).addClass('focus');
-                        }
-                    }
-                )
-
+    </div>
+    <script>
+        $(document).ready(function () {
+            console.log("进入reques");
+            $('#img_login').click(function () {
+                $("#id01").css("display", "block");
+                // $('#img_login').css("display","none");
             })
-                function change_user() {
-                    $("#id01").css("display", "none");
-                    $("#no_login").css("display", "block")
+            login(
+                '/user/login/',
+                ['mail', 'password'],
+                '/')
+            $(".modal-body label").click(
+                function () {
+                    if ($(this).hasClass('focus')) {
+                        return true;
+                    } else {
+                        $('.modal-body label').removeClass('focus');
+                        $(this).addClass('focus');
+                    }
                 }
-        </script>
+            )
+
+        })
+        function change_user() {
+            $("#id01").css("display", "none");
+            $("#no_login").css("display", "block")
+        }
+    </script>
 </body>
 
 </html>

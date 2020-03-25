@@ -13,8 +13,6 @@ html {
   background-color: #ffffff;
 }
 .div_img_login{
-  width: 100px;
-  height: 100px;
   border-radius: 50%;
   overflow: hidden;
 }
@@ -313,4 +311,15 @@ body a {
 }
 body a:hover {
   color: #00ffff;
+}
+
+
+.round_icon{
+  width: 45px;
+  height: 45px;
+  display: flex;
+  border-radius: 80%;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
 }
