@@ -318,7 +318,7 @@ body a:hover {
   width: 45px;
   height: 45px;
   display: flex;
-  border-radius: 80%;
+  border-radius: 50%;
   align-items: center;
   justify-content: center;
   overflow: hidden;

@@ -11,7 +11,8 @@ api_urls = [
     (r'/', api_index),
     (r'/data', data_index),
     (r'/data/upload/', data_upload_index),
-    (r'/models', models_index)
+    (r'/models', models_index),
+    # (r'/(.*)$',static_File)
 ]
 
 # 静态文件
@@ -26,7 +27,8 @@ admin_urls = [
 
 user_urls = [
     (r'/user/add/', user_add_account),
-    (r'/user/login/', login_index)
+    (r'/user/login/', login_index),
+
 ]
 
 urls = api_urls + admin_urls + user_urls
