@@ -1,0 +1,65 @@
+{% extends "../templates/shouye/layout.html" %} {% block content %}
+<div class="form_liu">
+    <form id="form-file-data" action="/models/add/" method="POST" enctype="multipart/form-data">
+        <div class="form-group">
+            <span class="label label-info">模型名称</span>
+            <input type="text" name="name" class="form-control" placeholder="模型名称">
+            <span class="label label-info">论文地址</span>
+            <input type="text" name="paper" class="form-control" placeholder="论文地址">
+            <span class="label label-info">数据地址</span>
+            <input type="text" name="data_url" class="form-control" placeholder="数据地址">
+            <span class="label label-info">模型文件</span>
+            <div class="file-loading">
+                <!-- {% raw xsrf_form_html() %} -->
+                {% raw xsrf_form_html() %}
+                <!-- <input id="text_file" name="file" type="file" class="file" data-theme="fas"> -->
+                <input id="text_file" name="file" type="file" class="file" data-theme="fas">
+                <!-- <input type="file" class="file" name="tkai_file" multiple> -->
+            </div>
+            <span class="label label-info">说明与建议</span>
+            <textarea id="editor-id" name="markdown" rows="15">
+                    </textarea>
+
+            <div class="row">
+                <div class="col-sm-4">
+                </div>
+                <div class="col-sm-2">
+                    <!-- <button id="btn-data" type="button" class="btn btn-block btn-primary"><i class="fa fa-check"></i>
+                        Submit</button> -->
+                    <input id="btn-data" type="submit" class="btn btn-block btn-primary" value="Submit">
+                    </input>
+                </div>
+                <div class="col-sm-2">
+                    <button type="reset" class="btn btn-block btn-default"><i class="fa fa-ban"></i> Reset</button>
+                </div>
+                <div class="col-sm-4">
+                </div>
+            </div>
+        </div>
+        <hr>
+        <div class="form-group">
+            <!-- <input class="btn btn-primary" type="submit" value="Submit"></input> -->
+            <!-- <button class="btn btn-outline-secondary" type="reset">Reset</button> -->
+        </div>
+    </form>
+
+</div>
+<script>
+    $(document).ready(function() {
+        //加载markdown拆件
+        $("#editor-id").markdownEditor();
+        // with plugin options
+        $("#editor-id").markdownEditor({
+            useTwemoji: true
+        });
+        //markdown完
+
+        //加载file插件的组件
+        file_upload(
+            '/models/add/', ['name', 'file', 'markdown'],
+            '/' //成功之后的跳转链接
+        )
+    })
+</script>
+
+{% end %}

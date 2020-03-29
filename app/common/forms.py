@@ -88,22 +88,19 @@ class LoginForm(Form):
         mail = self.mail.data
         c = Check()
         match_user = c.check_pwd(mail, data)
-        print("match_user zzz",match_user)
-        if match_user == None or match_user==False:
+        if match_user:
             raise ValidationError("账号密码不正确!")
 
 
-
-
 class DataForm(Form):
-    'name', 'file', 'markdown'
+    # 'name', 'file', 'markdown'
     name = StringField(
         '数据名称',
         validators=[
             DataRequired("数据名称不能为空!")
         ]
     )
-    # file = StringField(
+    # file = StringFuield(
     #     '文件数据',
     #     validators=[
     #         DataRequired("文件不能为空!")
@@ -113,5 +110,40 @@ class DataForm(Form):
         '相关说明',
         validators=[
             DataRequired("相关说明不能为空!")
+        ]
+    )
+
+
+class ModelForm(Form):
+    # 'name', paper, data_url, 'file', 'markdown'
+    name = StringField(
+        '数据名称',
+        validators=[
+            DataRequired("数据名称不能为空!")
+        ]
+    )
+    paper = StringField(
+        '论文地址',
+        validators=[
+            DataRequired("论文地址不能为空!")
+        ]
+    )
+    data_url = StringField(
+        '数据地址',
+        validators=[
+            DataRequired("数据地址不能为空!")
+        ]
+    )
+
+    # file = StringFuield(
+    #     '文件数据',
+    #     validators=[
+    #         DataRequired("文件不能为空!")
+    #     ]
+    # )
+    markdown = StringField(
+        '说明建议',
+        validators=[
+            DataRequired("说明建议不能为空!")
         ]
     )

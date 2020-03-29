@@ -15,13 +15,16 @@ class CommonHandler(tornado.web.RequestHandler):
     # 定义root_path
     @property
     def root_path(self):
-        return os.path.join(os.path.dirname(__file__), "../")
+        return os.path.abspath(os.path.dirname(os.path.dirname(__file__)))
 
     # 定义上传文件保存位置
     @property
     def upload_path(self):
         return os.path.join(self.root_path, "static/upload/")
-
+    # 定义上传文件保存位置
+    @property
+    def file_db_path(self):
+        return "/static/upload/"
     # 前缀地址
     @property
     def site_url(self):
@@ -75,7 +78,7 @@ class CommonHandler(tornado.web.RequestHandler):
     # 表单数据
     @property
     def form_params(self):
-        print("self.ajax_params",self.ajax_params)
+        # print("self.ajax_params",self.ajax_params)
         return MultiDict(self.ajax_params)
 
 

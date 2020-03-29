@@ -1,42 +1,55 @@
 {% extends "../templates/shouye/layout.html" %}
+{% block search %}
+<!----搜索栏目-->
+<div class="input-group">
+    <input type="text" class="form-control input_liu" placeholder="Search for...">
+    <span class="input-group-btn">
+        <button class="btn btn-default" type="button">Go!</button>
+    </span>
+</div><!-- /input-group -->
+{% end %}
 {% block content %}
 <!-- enctype="multipart/form-data" method="POST" -->
-<div></div>
-<form id="form-file-data" action="/data/upload/" method="POST" enctype="multipart/form-data">
-    <div class="form-group">
-        <span class="label label-info">数据名称</span>
-        <input type="text" name="name" class="form-control" placeholder="Text input">
-        <span class="label label-info">数据文件</span>
-        <div class="file-loading">
-            <!-- {% raw xsrf_form_html() %} -->
-            {% raw xsrf_form_html() %}
-            <input id="text_file" name="file" type="file" class="file" data-upload-url="/data/upload/" data-theme="fas">
-            <!-- <input type="file" class="file" name="tkai_file" multiple> -->
-        </div>
-        <span class="label label-info">相关markdown说明</span>
-        <textarea id="editor-id" name="markdown" rows="15">
+<div class="form_liu">
+    <form id="form-file-data" action="/data/upload/" method="POST" enctype="multipart/form-data">
+        <div class="form-group">
+            <span class="label label-info">数据名称</span>
+            <input type="text" name="name" class="form-control" placeholder="Text input">
+            <span class="label label-info">数据文件</span>
+            <span class="label label-info">论文地址</span>
+            <input type="text" name="paper" class="form-control" placeholder="Text input">
+            <div class="file-loading">
+                <!-- {% raw xsrf_form_html() %} -->
+                {% raw xsrf_form_html() %}
+                <input id="text_file" name="file" type="file" class="file" data-upload-url="/data/upload/"
+                    data-theme="fas">
+                <!-- <input type="file" class="file" name="tkai_file" multiple> -->
+            </div>
+            <span class="label label-info">相关markdown说明</span>
+            <textarea id="editor-id" name="markdown" rows="15">
                     </textarea>
 
-        <div class="row">
-            <div class="col-sm-4">
-            </div>
-            <div class="col-sm-2">
-                <button id="btn-data" type="button" class="btn btn-block btn-primary"><i class="fa fa-check"></i>
-                    Submit</button>
-            </div>
-            <div class="col-sm-2">
-                <button type="reset" class="btn btn-block btn-default"><i class="fa fa-ban"></i> Reset</button>
-            </div>
-            <div class="col-sm-4">
+            <div class="row">
+                <div class="col-sm-4">
+                </div>
+                <div class="col-sm-2">
+                    <button id="btn-data" type="button" class="btn btn-block btn-primary"><i class="fa fa-check"></i>
+                        Submit</button>
+                </div>
+                <div class="col-sm-2">
+                    <button type="reset" class="btn btn-block btn-default"><i class="fa fa-ban"></i> Reset</button>
+                </div>
+                <div class="col-sm-4">
+                </div>
             </div>
         </div>
-    </div>
-    <hr>
-    <div class="form-group">
-        <!-- <input class="btn btn-primary" type="submit" value="Submit"></input> -->
-        <!-- <button class="btn btn-outline-secondary" type="reset">Reset</button> -->
-    </div>
-</form>
+        <hr>
+        <div class="form-group">
+            <!-- <input class="btn btn-primary" type="submit" value="Submit"></input> -->
+            <!-- <button class="btn btn-outline-secondary" type="reset">Reset</button> -->
+        </div>
+    </form>
+</div>
 <script>
     $(document).ready(function () {
         //加载markdown拆件

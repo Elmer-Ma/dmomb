@@ -166,27 +166,33 @@
 
         <!-- Page Content -->
         <div id="page-content-wrapper1">
-            <div class="fadeInLeft" style="float: left; width: 50px;">
-                <button type="button" class="hamburger is-closed animated " data-toggle="offcanvas">
-                    <span class="hamb-top"></span>
-                    <span class="hamb-middle"></span>
-                    <span class="hamb-bottom"></span>
-                </button>
+            <div style="float: left; width: 50px;">
+                <div class="fadeInLeft">
+
+                    <button type="button" class="hamburger is-closed animated " data-toggle="offcanvas">
+                        <span class="hamb-top"></span>
+                        <span class="hamb-middle"></span>
+                        <span class="hamb-bottom"></span>
+                    </button>
+
+                </div>
                 <div>
-                    fucker
+
                 </div>
             </div>
-            <div class="container" style="float: left; margin-left: 50px;">
-                <div class='row' style="background-color:gainsboro">
+            <div class="container container_liu">
+                <div class='row'>
                     <!----div标题栏-->
                     <div class="col-md-4">
-                        <h3>dmomb网站首页</h3>
+                        <h3>
+                            dmomb网站首页
+                        </h3>
                     </div>
                     <!-- 搜索框的大小 -->
                     <div class="col-md-4">
                         {% block search %}{% end %}
                     </div>
-                    <div class="col-md-2">
+                    <div class="col-md-1">
 
                     </div>
                     <div class="col-md-2">
@@ -248,6 +254,9 @@
                                     </ul>
                                 </li>
                             </ul>
+                        </div>
+                        <div class="col-md-1">
+
                         </div>
                         <!-- 登录之后显示的模块 -->
                         <div id="haved_login" style="width:200px;display:none">

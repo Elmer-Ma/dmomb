@@ -1,27 +1,38 @@
-{% extends "../templates/shouye/layout.html" %}
-{% block search %}
+{% extends "../templates/shouye/layout.html" %} {% block search %}
 <!----搜索栏目-->
-<div class="col-md-4">
-    <div class="input-group">
-        <input type="text" class="form-control" placeholder="Search for...">
-        <span class="input-group-btn">
-            <button class="btn btn-default" type="button">Go!</button>
-        </span>
-    </div><!-- /input-group -->
-</div><!-- /.col-lg-6 -->
-{% end %}
-{% block content %}
-
-<div class="col-md-4 column nerous">
-    <h2>
-        <a href="#">模型 </a>
-    </h2>
-    <p>
-        这些都应该是很好的模型
-    </p>
-    <p>
-        <a class="btn" href="#">View details »</a>
-    </p>
+<div class="input-group">
+    {% raw xsrf_form_html() %}
+    <input type="text" class="form-control input_liu" placeholder="Search for...">
+    <span class="input-group-btn">
+        <button class="btn btn-default" type="button">Go!</button>
+    </span>
 </div>
+<!-- /input-group -->
+{% end %} {% block content %}
+<p>数据</p>
+{% for v in data['collections'] %}
+<div class="card box" style="float: left;width: 350px; height: 350px;  margin: 2rem;">
+    <img class="card-img-top" src="{{ v['file_path'] }}" alt="Card image cap" style="width: 330px;height: 230px; border-radius:10px;margin: 1rem;">
+    <div class="card-body">
+        <h5 class="card-title">标题:{{ v['name'] }}</h5>
+        <p class="card-text">内容:{{ v['markdown_info'] }}
+            <a href="/models/detail?_id={{ v['_id'] }}" class="card-link">详细信息</a></p>
 
+    </div>
+</div>
+{% end %}
+<!-- <script>
+    $(document).ready(function() {
+        url = '/models/'
+        $.ajax({
+            type: "post", //请求方式
+            url: url, //请求的接口地址
+            data: '',
+            dataType: "json",
+            success: function(collections) {
+                console.log(collections)
+            }
+        })
+    })
+</script> -->
 {% end %}

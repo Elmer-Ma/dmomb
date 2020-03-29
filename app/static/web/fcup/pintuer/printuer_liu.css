@@ -1,0 +1,17 @@
+.keypoint {
+    padding: 50px
+}
+
+.keypoint h1 {
+    font-size: 48px;
+    margin-bottom: 15px
+}
+
+.keypoint p {
+    font-size: 18px
+}
+
+.logo {
+    padding: 2px 0;
+    display: block
+}
