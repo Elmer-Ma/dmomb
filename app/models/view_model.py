@@ -120,7 +120,7 @@ class ModelDetail(HtmlHandler):
             <!-- 此处省略掉markdown的css样式，因为太长了 -->
             </style>
             '''
-        html = markdown.markdown(collections[0]['markdown_info'])
+        html = css + markdown.markdown(collections[0]['markdown_info'])
         #################
         data = dict(
             markdown_info=html

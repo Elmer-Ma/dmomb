@@ -9,10 +9,10 @@ from app.configs import configs
 # api接口
 api_urls = [
     (r'/', api_index),
-    (r'/data', data_index),
-    (r'/data/upload', data_upload_index),
-    (r'/models', models_index),
-    (r'/models/add', add_model_index),
+    (r'/data/', data_index),
+    (r'/data/upload/', data_upload_index),
+    (r'/models/', models_index),
+    (r'/models/add/', add_model_index),
     (r'/models/detail', detail_model_index)
 ]
 
