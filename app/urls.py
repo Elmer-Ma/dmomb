@@ -28,7 +28,8 @@ admin_urls = [
 
 user_urls = [
     (r'/user/add/', user_add_account),
-    (r'/user/login/', login_index)
+    (r'/user/login/', login_index),
+
 ]
 
 urls = api_urls + admin_urls + user_urls

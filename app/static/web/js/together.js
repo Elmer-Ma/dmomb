@@ -99,6 +99,7 @@ function  login(url, fields, redirect_url) {
           $("#user_info").html(res.user.mail);
           $("#no_login").css("display", "none");
           $("#haved_login").css("display", "block");
+          $('#img_login').css("display","block");
           // $("#id01").css("display","block");
           //成功跳转
           // location.href = redirect_url;
