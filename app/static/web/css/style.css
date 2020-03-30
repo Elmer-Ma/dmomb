@@ -435,6 +435,7 @@ body a:hover {
     /*阴影位置*/
 }
 
+<<<<<<< HEAD
 .round_icon {
     width: 45px;
     height: 45px;
@@ -443,4 +444,14 @@ body a:hover {
     align-items: center;
     justify-content: center;
     overflow: hidden;
+=======
+.round_icon{
+  width: 45px;
+  height: 45px;
+  display: flex;
+  border-radius: 50%;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+>>>>>>> ea8341bec8f55071b6f44f60737c6c76fd96c6f0
 }
