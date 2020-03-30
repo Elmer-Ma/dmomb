@@ -5,6 +5,15 @@ from tornado.util import unicode_type
 
 
 class HtmlHandler(CommonHandler):
+    # 返回一个用户名称
+    @property
+    def user_name(self):
+        return self.get_secure_cookie('name', None)
+    # 请求的预处理
+
+    def prepare(self):
+        if not self.user_name:
+            self.redirect('/')
     '''
     渲染模板的
     '''
@@ -72,3 +81,9 @@ class HtmlHandler(CommonHandler):
             hloc = html.index(b'</body>')
             html = html[:hloc] + b''.join(html_bodies) + b'\n' + html[hloc:]
         return self.write(html)
+
+    def write_error(self, status_code, **kwargs):
+        if status_code == 404:
+            self.write('<h1>你访问的页面不存在！！！！</h1>')
+        else:
+            super().write_error(status_code, **kwargs)

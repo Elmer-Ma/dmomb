@@ -3,7 +3,7 @@ import time
 import os
 import tornado.gen
 import tornado.concurrent
-from app.api.html_common import HtmlHandler
+from app.api.view_common import CommonHandler
 from app.configs import configs
 from tornado.escape import utf8
 from tornado.util import unicode_type
@@ -11,7 +11,7 @@ from concurrent.futures import ThreadPoolExecutor
 # from tornado.template import Template
 
 
-class IndexHandler(HtmlHandler):
+class IndexHandler(CommonHandler):
     # executor = ThreadPoolExecutor(50)
     # get
     @tornado.gen.coroutine

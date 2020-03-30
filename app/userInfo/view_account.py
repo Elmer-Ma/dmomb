@@ -4,13 +4,14 @@ import datetime
 import tornado.gen
 import tornado.concurrent
 from app.api.html_common import HtmlHandler
+from app.api.view_common import CommonHandler
 from app.configs import configs
 from app.common.forms import AccountAddForm, LoginForm
 from werkzeug.security import generate_password_hash  # 生成hash加密
 # 添加账号视图
 
 
-class AccountAddHandler(HtmlHandler):
+class AccountAddHandler(CommonHandler):
     @tornado.gen.coroutine
     def get(self, *args, **kwargs):
         yield self.get_response()
@@ -30,7 +31,7 @@ class AccountAddHandler(HtmlHandler):
         res = dict(code=0, msg='失败')
         print("进去view_account")
         form = AccountAddForm(self.form_params)
-        print("self.form_params",self.form_params)
+        print("self.form_params", self.form_params)
         if form.validate():
             # 验证通过
             # 保存数据
@@ -57,7 +58,7 @@ class AccountAddHandler(HtmlHandler):
 # 处理登录操作
 
 
-class LoginHandler(HtmlHandler):
+class LoginHandler(CommonHandler):
 
     @tornado.gen.coroutine
     def get(self, *args, **kwargs):
@@ -77,9 +78,11 @@ class LoginHandler(HtmlHandler):
         res = dict(code=0, msg='失败')
         print("进去LoginHandler")
         form = LoginForm(self.form_params)
-        print("form",form)
+        print("form", form)
         # field = form.mail
         if form.validate():
+            # 设置安全会话,实现权限管理
+            self.set_secure_cookie('name', form.data['mail'])
             # 定义成功接口格式
             res['code'] = 1
             res['msg'] = '成功'
@@ -87,5 +90,5 @@ class LoginHandler(HtmlHandler):
         else:
             # 定义失败接口格式
             res['data'] = form.errors
-        print("res",res)
+        print("res", res)
         self.write(res)
