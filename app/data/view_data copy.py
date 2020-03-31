@@ -8,8 +8,6 @@ import tornado.concurrent
 from app.api.html_common import HtmlHandler
 from app.configs import configs
 from app.common.forms import DataForm
-from app.data.Data import Data
-from app.data.servlet_data import Servlet_data
 
 
 class DataHandler(HtmlHandler):
@@ -42,28 +40,45 @@ class DataUploadHandler(HtmlHandler):
     def post_response(self):
         res = dict(code=0, msg='失败')
         file_metas = self.request.files.get('file', None)
+        # if not file_metas:
+        #     res['result'] = 'Invalid Args'
+        #     print("没有文件返回了了")
+        #     return res
+        file_uuid = 'nothing'
+        file_path = 'nothing'
+        if file_metas is not None:
+            res['file_flag'] = 1
+            for meta in file_metas:
+                filename = meta['filename']
+                file_uuid = uuid.uuid4()
+                file_path = os.path.join(self.upload_path, filename)
+
+                with open(file_path, 'wb') as up:
+                    up.write(meta['body'])
+
+        print(self.form_params)
         form = DataForm(self.form_params)
         if form.validate():
-            # 实例化这个data类
-            data = Data(
-                name=form.data['name'],
-                img_path="暂时为空",
-                file_path="暂时为空",
-                info=form.data['markdown'],
-                createAt=datetime.datetime.now(),
-                updatedAt=datetime.datetime.now()
+            # 根据文件名称生成唯一的uuid,并将这个当做标识
+            print("验证成功")
+            # 写入数据库
+            db = self.md.dmomb
+            co = db.data_info
+            co.insert_one(
+                dict(
+                    name=form.data['name'],
+                    file_uuid=file_uuid,
+                    userId="应该标识是那个用户",
+                    file_path=file_path,
+                    markdown_info=form.data['markdown'],
+                    createAt=datetime.datetime.now(),
+                    updatedAt=datetime.datetime.now()
+                )
             )
-            # 将数据传给servlet处理
-            servlet = Servlet_data(
-                data
-            )
-            if servlet.process_data():
-                # 数据处理成功
-                res['code'] = 1
-                res['msg'] = '成功'
-            else:
-                res['code'] = 0
-                res['msg'] = '数据库格式要求不符合'
+            # 返回成功数据
+            # 定义成功接口格式
+            res['code'] = 1
+            res['msg'] = '成功'
         else:
             # 定义失败接口格式
             res['data'] = form.errors

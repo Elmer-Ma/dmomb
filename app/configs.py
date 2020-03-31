@@ -14,8 +14,8 @@ configs = dict(
 # 数据库注册信息
 mongodb_configs = dict(
     db_host='106.14.200.68',
-    # 使用google的数据库
     # db_host='127.0.0.1',
+    # 使用google的数据
     # db_host='mongodb+srv://dmomb:dmomb666888@cluster0-357dv.azure.mongodb.net/test?retryWrites=true&w=majority',
 
     db_port=27017

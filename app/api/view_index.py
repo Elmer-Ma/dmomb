@@ -22,5 +22,5 @@ class IndexHandler(CommonHandler):
     def get_response(self):
         # loader = Template
         print("view_index.py")
-        time.sleep(5)
+        # time.sleep(5)
         self.html(os.path.join(configs['templates_path'], 'shouye/index.html'))
